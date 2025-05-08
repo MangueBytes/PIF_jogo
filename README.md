@@ -66,7 +66,7 @@ CESAR School
 
 No terminal, execute o seguinte comando:
 
-```bash
+bash
 gcc -Isrc -Iinclude -Icli-lib src/main.c src/jogo.c cli-lib/cli.c -o build/jogo.exe
 
 7. Pontuação
