@@ -69,14 +69,14 @@ No terminal, execute o seguinte comando:
 bash
 gcc -Isrc -Iinclude -Icli-lib src/main.c src/jogo.c cli-lib/cli.c -o build/jogo.exe
 
-##7. Pontuação
+## 7. Pontuação
 Acertos em desafios geram pontos.
 
 Decisões estratégicas afetam o desfecho e pontuação.
 
 Tempo total de fuga influencia na pontuação final.
 
-##8. Tecnologias e Conceitos Utilizados
+## 8. Tecnologias e Conceitos Utilizados
 Linguagem C (C99)
 
 structs e ponteiros
