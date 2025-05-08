@@ -53,21 +53,24 @@ CESAR School
 - Estrutura de pastas corretamente organizada (veja abaixo)
 
 ### 📁 Estrutura de Diretórios
-/projeto
-├── src/ # Código-fonte (.c)
-├── include/ # Arquivos de cabeçalho (.h)
-├── cli-lib/ # Código da CLI-lib (copiado do repositório oficial)
-├── build/ # Saída da compilação
-├── README.md # Este arquivo
-├── Makefile # (opcional, mas recomendado)
-└── LICENSE # (opcional)
+
+![image](https://github.com/user-attachments/assets/199d3b4f-4829-4dae-9663-dfa5eaf4fbaa)
 
 ### 🔧 Compilação Manual
 
 No terminal, execute o seguinte comando:
 
 bash
-gcc -Isrc -Iinclude -Icli-lib src/main.c src/jogo.c cli-lib/cli.c -o build/jogo.exe
+gcc -Isrc -Iinclude -Icli-lib src/main.c 
+src/jogo.c cli-lib/cli.c -o build/
+jogo.exe
+
+Execução:
+./build?jogo.exe
+
+Alternativa com Makefile: 
+make
+./build/jogo.exe
 
 ## 7. Pontuação
 Acertos em desafios geram pontos.
