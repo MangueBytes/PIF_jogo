@@ -4,6 +4,7 @@ Jogo desenvolvido para a cadeira de PIF da CESAR School
 
 ## 1. Membros da Equipe
 - Janderson
+- Maria Aparecida
 - Pedro Henrique
 - Rhaldney
 
