@@ -86,9 +86,7 @@ make
 
 ## 7. Pontuação
 
-- No modo multiplayer, o primeiro jogador a marcar **4 pontos** vence.
-- No modo contra a máquina, o jogador vence ao marcar **2 pontos**.
-- O computador vence se o jogador deixar a bola passar **2 vezes**.
+- O jogador a marcar mais pontos, acertando o lado do inimigo vence.
 
 ---
 
