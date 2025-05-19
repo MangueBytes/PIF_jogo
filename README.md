@@ -1,47 +1,51 @@
-# PIF_jogo
+# Pong PIF
+
 Jogo desenvolvido para a cadeira de PIF da CESAR School
-# Fuga da Torre
 
 ## 1. Membros da Equipe
+
 - Janderson
 - Maria Aparecida
 - Pedro Henrique
 - Rhaldney
 
-
 ## 2. Disciplina
+
 Programação Imperativa e Funcional – 2025.1
 
 ## 3. Instituição de Ensino
+
 CESAR School
 
 ---
 
 ## 4. Nome do Jogo
-*Fuga da Torre* (Escape Tower)
+
+**Pong PIF**
 
 ---
 
 ## 5. Descrição do Jogo
 
-*Fuga da Torre* é um jogo de aventura e quebra-cabeça baseado em texto. O jogador está preso em uma torre mágica e precisa escapar passando por diferentes andares, enfrentando desafios variados como charadas, escolhas estratégicas e combates simples.
+**Pong PIF** é uma versão clássica jogo Pong, feita em linguagem C para terminal. O jogo terá dois jodadores, o objetivo é simples: rebater a bola e marcar pontos até vencer a partida. Adicionamos um portal que telegransporta a bolinha aleatoriamente.
 
 ### 🎮 Mecânicas de Jogo
 
-- *Charadas*: o jogador precisa responder corretamente para abrir portas mágicas.
-- *Escolhas*: cada decisão leva a um caminho diferente com consequências únicas.
-- *Combates simples*: o jogador enfrenta criaturas com base em lógica e sorte.
+- _Multiplayer local_: dois jogadores se enfrentam usando o teclado.
+- _Controles intuitivos_: teclas W/S para o jogador 1 e setas ↑/↓ para o jogador 2.
+- _Sistema de pontuação_: vence quem alcançar o número máximo de pontos antes do oponente.
 
 ### 🧠 Estrutura Interna
 
-- As salas e itens são representados usando structs.
-- O labirinto é gerado dinamicamente com uso de ponteiros e alocação dinâmica.
-- A pontuação é baseada em tempo de conclusão e nas escolhas feitas.
+- A interface do jogo é baseada em ASCII.
+- O jogo é estruturado em funções modulares, gameplay, movimentação e telas de vitória.
+- A movimentação da bola e colisão com as barras são gerenciadas com lógica condicional.
+- Utiliza a biblioteca `CLI-lib` para controle do cursor no terminal Windows.
 
 ### 🕹 Interação
 
-- Entrada via teclado com menus, perguntas e comandos simples.
-- Saída formatada com a biblioteca [CLI-lib](https://github.com/tgfb/cli-lib) para uma melhor experiência no terminal.
+- Jogo controlado totalmente via teclado.
+- Exibição no terminal em tempo real com animação da bola e das barras.
 
 ---
 
@@ -50,45 +54,56 @@ CESAR School
 ### ✅ Pré-requisitos
 
 - Compilador gcc instalado
-- Sistema Linux/macOS ou terminal compatível (no Windows, use WSL ou Git Bash)
-- Estrutura de pastas corretamente organizada (veja abaixo)
+- Sistema Windows (compatível com `windows.h`)
+- Terminal compatível com a CLI-lib
 
 ### 📁 Estrutura de Diretórios
 
+```
 ![image](https://github.com/user-attachments/assets/199d3b4f-4829-4dae-9663-dfa5eaf4fbaa)
+```
 
 ### 🔧 Compilação Manual
 
-No terminal, execute o seguinte comando:
+```bash
+gcc -Isrc -Iinclude -Icli-lib src/main.c src/jogo.c cli-lib/cli.c -o build/jogo.exe
+```
 
-bash
-gcc -Isrc -Iinclude -Icli-lib src/main.c 
-src/jogo.c cli-lib/cli.c -o build/
-jogo.exe
+### ▶ Execução
 
-Execução:
-./build?jogo.exe
+```bash
+./build/jogo.exe
+```
 
-Alternativa com Makefile: 
+Alternativa com Makefile:
+
+```bash
 make
 ./build/jogo.exe
+```
+
+---
 
 ## 7. Pontuação
-Acertos em desafios geram pontos.
 
-Decisões estratégicas afetam o desfecho e pontuação.
+- No modo multiplayer, o primeiro jogador a marcar **4 pontos** vence.
+- No modo contra a máquina, o jogador vence ao marcar **2 pontos**.
+- O computador vence se o jogador deixar a bola passar **2 vezes**.
 
-Tempo total de fuga influencia na pontuação final.
+---
 
 ## 8. Tecnologias e Conceitos Utilizados
-Linguagem C (C99)
 
-structs e ponteiros
+- Linguagem C (C99)
+- Estruturas de decisão e repetição (`if`, `switch`, `while`)
+- `structs`, ponteiros e funções modulares
+- Controle de cursor com `gotoxy()` e biblioteca `CLI-lib`
+- Lógica de colisão e animação no terminal
+- Organização em múltiplos arquivos `.c` e `.h`
 
-Alocação dinâmica de memória
+---
 
-Estruturas de decisão e repetição (if, switch, for, while)
+## 9. Implementações adicionais
 
-Modularização com arquivos .h e .c
-
-Interação em terminal com CLI-lib
+- Elementos de terror:
+  A bola seria uma caveirinha
